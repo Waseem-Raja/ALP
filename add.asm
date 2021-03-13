@@ -1,8 +1,9 @@
           
 DATA SEGMENT
-    a DB 05H
-    b DB 03H
-    sum DB 00H
+    A DB 05H
+    B DB 03H
+    Sum DB ?
+    carray Db ?
 DATA ENDS
 
 CODE SEGMENT  
@@ -14,10 +15,12 @@ CODE SEGMENT
         MOV AX, DATA
         MOV DS, AX
         
-        MOV CH, a
-        MOV bh, b
+        MOV CH, A
+        MOV bh, B
         ADD CH,bh
-        
+        jnc skip
+        inc carray
+    skip: mov sum,ch        
        
        
          
