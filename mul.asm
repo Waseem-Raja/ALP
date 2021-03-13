@@ -1,0 +1,24 @@
+
+DATA SEGMENT
+	A DB 03H
+	B DB 03H
+	product Dw ?
+DATA ENDS
+
+CODE SEGMENT
+	ASSUME CS:CODE, DS:DATA
+	START:
+		MOV AX, DATA
+		MOV DS, AX
+		MOV cH, A
+		MOV al, B
+		
+		mul al
+		      
+		      
+		MOV AX, 4C00H
+		INT 21H
+CODE ENDS
+	END START
+
+
